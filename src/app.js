@@ -1,6 +1,7 @@
 const express = require("express");
 const globalErrorHandler = require("./utils/globalErrorHandler");
 const applyMiddleware = require("./middlewares/applyMiddleware");
+const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
@@ -23,6 +24,11 @@ app.all("*", (req, res, next) => {
 // error handling middleware
 app.use(globalErrorHandler);
 
-app.listen(port, () => {
-  console.log(`product hunt Server is running on port ${port}`);
-});
+const main = async () => {
+  await connectDB();
+  app.listen(port, () => {
+    console.log(`product hunt Server is running on port ${port}`);
+  });
+};
+
+main();
