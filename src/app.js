@@ -1,9 +1,14 @@
 const express = require("express");
 const globalErrorHandler = require("./utils/globalErrorHandler");
+const applyMiddleware = require("./middlewares/applyMiddleware");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+// middleware
+applyMiddleware(app);
+
+// check server health
 app.get("/health", (req, res) => {
   res.send("product hunt is running....");
 });
