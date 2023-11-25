@@ -4,6 +4,7 @@ const createCookie = (req, res) => {
   try {
     const user = req.body;
     const token = generateToken(user);
+    // console.log(token)
     res
       .cookie("token", token, {
         httpOnly: true,
