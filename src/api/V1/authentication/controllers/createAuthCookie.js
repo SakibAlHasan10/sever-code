@@ -1,9 +1,9 @@
-const jwt = require('jsonwebtoken');
-require("dotenv").config();
+const generateToken = require("../../../../utils/generateToken");
+
 const createCookie = (req, res) => {
   try {
     const user = req.body;
-    const token = jwt.sign(user, process.env.SECRET_TK, { expiresIn: "1h" });
+    const token = generateToken(user);
     res
       .cookie("token", token, {
         httpOnly: true,
@@ -15,4 +15,4 @@ const createCookie = (req, res) => {
     res.send(error);
   }
 };
-module.exports = createCookie
+module.exports = createCookie;

@@ -1,8 +1,12 @@
-const createCookie = require('../../../api/V1/authentication/controllers/createAuthCookie');
+const {
+  createAuthCookie,
+  logout,
+} = require("../../../api/V1/authentication/controllers");
 
-const router = require('express').Router()
+const router = require("express").Router();
 //   create jwt token
-router.post("/jwt", createCookie );
+router.post("/jwt", createAuthCookie);
+// logout
+router.post("/logout", logout);
 
-
-module.exports = router
+module.exports = router;
