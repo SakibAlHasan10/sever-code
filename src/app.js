@@ -5,22 +5,14 @@ const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
-const authenticationRouter= require("./routes/V1/authentication/index")
+const authenticationRouter = require("./routes/V1/authentication/index");
+const addUser = require("./routes/V1/user/user")
 
 // middleware
 applyMiddleware(app);
 
-app.use(authenticationRouter)
-
-
-
-
-
-
-
-
-
-
+app.use(authenticationRouter);
+app.use(addUser);
 
 // check server health
 app.get("/health", (req, res) => {
