@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 const authenticationRouter = require("./routes/V1/authentication/index");
 const addUserRouter = require("./routes/V1/user/user");
 const addSocialUserRouter = require("./routes/V1/user/socialUser");
-
+const getSingleUser = require("./routes/V1/user/getSingleUser")
 // middleware
 applyMiddleware(app);
 
@@ -19,6 +19,7 @@ app.use(authenticationRouter);
 // users
 app.use(addUserRouter);
 app.use(addSocialUserRouter);
+app.use(getSingleUser)
 // products
 
 // check server health
