@@ -6,10 +6,15 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 // router
+// authentication
 const authenticationRouter = require("./routes/V1/authentication/index");
+
+// user
 const addUserRouter = require("./routes/V1/user/user");
 const addSocialUserRouter = require("./routes/V1/user/socialUser");
 const getSingleUser = require("./routes/V1/user/getSingleUser");
+
+// product
 const insertProductRouter = require("./routes/V1/products/insertProductRoute");
 const findAllProductRoute = require("./routes/V1/products/findAllProductRoute");
 const detailsSingleProductRoute = require("./routes/V1/products/detailsSingleProduct");
@@ -25,12 +30,13 @@ app.use(authenticationRouter);
 app.use(addUserRouter);
 app.use(addSocialUserRouter);
 app.use(getSingleUser);
+
+// product
 app.use(insertProductRouter);
 app.use(findAllProductRoute);
 app.use(detailsSingleProductRoute);
 app.use(deleteSingleProductRoute);
 app.use(changeStatusRoute);
-// products
 
 // check server health
 app.get("/health", (req, res) => {

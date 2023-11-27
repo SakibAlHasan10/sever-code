@@ -1,22 +1,18 @@
 const Products = require("../../models/Products");
 
 const insertProductLib = async (query) => {
-    const insertDoc={
-        productName:query.productName,
-        productDescription:query.productDescription,
-        productImage:query.productImage,
-        links:query.links,
-        tags:query.tags,
-        owner:query.owner,
-        // postTime:("timestamp", new Date())
-        featured:query.featured,
-        status:query.status,
-        vote:query.vote,
-        time : { type : Date(), default: Date.now() }
-    }
-    console.log(insertDoc)
-    const cursor = await Products.insertMany(insertDoc);
-    console.log(cursor)
+  const insertDoc = {
+    productName: query.productName,
+    productDescription: query.productDescription,
+    productImage: query.productImage,
+    links: query.links,
+    tags: query.tags,
+    owner: query.owner,
+    featured: query.featured,
+    status: query.status,
+    vote: query.vote,
+  };
+  const cursor = await Products.create(insertDoc);
   return cursor;
 };
 

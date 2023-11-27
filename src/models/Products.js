@@ -44,13 +44,10 @@ const UserSchema = new Schema({
         type: String,
         required: true,
       },
-      time: {
-        type: String,
-      },
+      
     },
-  ],
-  createdAt: Date
-});
+  ]
+},{ timestamps: true });
 
 const Products = model("Products", UserSchema);
 
