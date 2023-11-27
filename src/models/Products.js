@@ -13,7 +13,11 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  tags: [String],
+  links: {
+    type: String,
+    required: true,
+  },
+  tags: [Object],
   owner: [
     {
       name: {
@@ -28,8 +32,12 @@ const UserSchema = new Schema({
         type: String,
         required: true,
       },
+      time: {
+        type: String,
+      },
     },
   ],
+  createdAt: Date
 });
 
 const Products = model("Products", UserSchema);

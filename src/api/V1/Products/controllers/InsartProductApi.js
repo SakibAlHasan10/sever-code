@@ -1,4 +1,4 @@
-const insertProductLib = require("../../../lib/products/insartProductLib");
+const insertProductLib = require("../../../../lib/products/insartProductLib");
 
 const insertProductApi = async (req, res) => {
   const query = req.body;

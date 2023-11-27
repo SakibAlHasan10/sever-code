@@ -1,7 +1,7 @@
-const insertProductApi = require("../../../api/V1/Products/InsartProductApi");
+const insertProductApi = require("../../../api/V1/Products/controllers/InsartProductApi");
 
 const router = require("express").Router();
 
-router.put("/v1/products", insertProductApi);
+router.post("/v1/products", insertProductApi);
 
-module.exports = router;
+module.exports = router; 
