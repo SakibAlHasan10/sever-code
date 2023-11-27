@@ -12,7 +12,8 @@ const addSocialUserRouter = require("./routes/V1/user/socialUser");
 const getSingleUser = require("./routes/V1/user/getSingleUser");
 const insertProductRouter = require("./routes/V1/products/insertProductRoute");
 const findAllProductRoute = require("./routes/V1/products/findAllProductRoute");
-const detailsSingleProductRoute = require("./routes/V1/products/detailsSingleProduct")
+const detailsSingleProductRoute = require("./routes/V1/products/detailsSingleProduct");
+const deleteSingleProductRoute = require("./routes/V1/products/deleteSingleProductRoute");
 // middleware
 applyMiddleware(app);
 
@@ -25,7 +26,8 @@ app.use(addSocialUserRouter);
 app.use(getSingleUser);
 app.use(insertProductRouter);
 app.use(findAllProductRoute);
-app.use(detailsSingleProductRoute)
+app.use(detailsSingleProductRoute);
+app.use(deleteSingleProductRoute);
 // products
 
 // check server health
