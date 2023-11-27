@@ -9,6 +9,9 @@ const insertProductLib = async (query) => {
         tags:query.tags,
         owner:query.owner,
         // postTime:("timestamp", new Date())
+        featured:query.featured,
+        status:query.status,
+        vote:query.vote,
         time : { type : Date(), default: Date.now() }
     }
     console.log(insertDoc)

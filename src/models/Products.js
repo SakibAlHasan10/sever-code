@@ -17,6 +17,18 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
+  featured: {
+    type: Boolean,
+    required: true,
+  },
+  status: {
+    type: String,
+    required: true,
+  },
+  vote: {
+    type: Number,
+    required: true,
+  },
   tags: [Object],
   owner: [
     {

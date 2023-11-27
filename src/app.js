@@ -14,6 +14,7 @@ const insertProductRouter = require("./routes/V1/products/insertProductRoute");
 const findAllProductRoute = require("./routes/V1/products/findAllProductRoute");
 const detailsSingleProductRoute = require("./routes/V1/products/detailsSingleProduct");
 const deleteSingleProductRoute = require("./routes/V1/products/deleteSingleProductRoute");
+const changeStatusRoute = require("./routes/V1/products/changeStatusRoute");
 // middleware
 applyMiddleware(app);
 
@@ -28,6 +29,7 @@ app.use(insertProductRouter);
 app.use(findAllProductRoute);
 app.use(detailsSingleProductRoute);
 app.use(deleteSingleProductRoute);
+app.use(changeStatusRoute);
 // products
 
 // check server health
