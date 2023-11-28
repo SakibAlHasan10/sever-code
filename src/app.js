@@ -24,6 +24,8 @@ const findAllProdutSecureRoute = require("./routes/V1/products/findAllProdutSecu
 const findProductByUserRoute = require("./routes/V1/products/findProductByUserRoute");
 const getAllUserRoute = require("./routes/V1/user/getAllUserRoute");
 const changeUserRoleRoute = require("./routes/V1/user/changeUserRoleRoute");
+const insartReviews = require("./routes/V1/reviews/insartReviews");
+const getReviewsRoute = require("./routes/V1/reviews/getReviewsRoute");
 // middleware
 applyMiddleware(app);
 
@@ -45,6 +47,8 @@ app.use(changeStatusRoute);
 app.use(findProductByUserRoute);
 app.use(getAllUserRoute);
 app.use(changeUserRoleRoute);
+app.use(insartReviews);
+app.use(getReviewsRoute);
 
 // check server health
 app.get("/health", (req, res) => {
