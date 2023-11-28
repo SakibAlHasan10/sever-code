@@ -23,7 +23,7 @@ const changeStatusRoute = require("./routes/V1/products/changeStatusRoute");
 const findAllProdutSecureRoute = require("./routes/V1/products/findAllProdutSecureRoute");
 const findProductByUserRoute = require("./routes/V1/products/findProductByUserRoute");
 const getAllUserRoute = require("./routes/V1/user/getAllUserRoute");
-
+const changeUserRoleRoute = require("./routes/V1/user/changeUserRoleRoute");
 // middleware
 applyMiddleware(app);
 
@@ -44,6 +44,7 @@ app.use(deleteSingleProductRoute);
 app.use(changeStatusRoute);
 app.use(findProductByUserRoute);
 app.use(getAllUserRoute);
+app.use(changeUserRoleRoute);
 
 // check server health
 app.get("/health", (req, res) => {
