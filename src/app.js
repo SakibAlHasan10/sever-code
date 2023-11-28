@@ -22,6 +22,8 @@ const deleteSingleProductRoute = require("./routes/V1/products/deleteSingleProdu
 const changeStatusRoute = require("./routes/V1/products/changeStatusRoute");
 const findAllProdutSecureRoute = require("./routes/V1/products/findAllProdutSecureRoute");
 const findProductByUserRoute = require("./routes/V1/products/findProductByUserRoute");
+const getAllUserRoute = require("./routes/V1/user/getAllUserRoute");
+
 // middleware
 applyMiddleware(app);
 
@@ -40,7 +42,8 @@ app.use(findAllProdutSecureRoute);
 app.use(detailsSingleProductRoute);
 app.use(deleteSingleProductRoute);
 app.use(changeStatusRoute);
-app.use(findProductByUserRoute)
+app.use(findProductByUserRoute);
+app.use(getAllUserRoute);
 
 // check server health
 app.get("/health", (req, res) => {
