@@ -21,6 +21,9 @@ const UserSchema = new Schema({
     type: Boolean,
     required: true,
   },
+  report: {
+    type: Boolean,
+  },
   status: {
     type: String,
     required: true,

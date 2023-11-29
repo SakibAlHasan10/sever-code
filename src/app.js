@@ -26,6 +26,7 @@ const getAllUserRoute = require("./routes/V1/user/getAllUserRoute");
 const changeUserRoleRoute = require("./routes/V1/user/changeUserRoleRoute");
 const insartReviews = require("./routes/V1/reviews/insartReviews");
 const getReviewsRoute = require("./routes/V1/reviews/getReviewsRoute");
+const paymentRoute = require("./routes/V1/paymentRoute/paymentRoute");
 // middleware
 applyMiddleware(app);
 
@@ -49,6 +50,7 @@ app.use(getAllUserRoute);
 app.use(changeUserRoleRoute);
 app.use(insartReviews);
 app.use(getReviewsRoute);
+app.use(paymentRoute);
 
 // check server health
 app.get("/health", (req, res) => {

@@ -12,7 +12,7 @@ const findAllProductLib = async (filter) => {
   } else if (filter.vote) {
     option = { vote: filter.vote };
   }
-
+ 
   const product = await Products.find(fil).sort(option);
 
   return product;
