@@ -1,3 +1,9 @@
+  require("dotenv").config();
+const http=require("http")
+const app = require("./src/app")
+const connectDB = require("./src/db/connectDB");
+const server = http.createServer(app)
+const port = process.env.PORT || 5000;
 
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -10,7 +16,7 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   }
 });
-
+ 
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
@@ -24,3 +30,15 @@ async function run() {
   }
 }
 run().catch(console.dir);
+
+
+
+const main = async () => {
+  console.log("connected..")
+  await connectDB();
+  server.listen(5005, () => {
+    console.log(`product hunt Server is running on port ${5005}`);
+  });
+};
+
+main();

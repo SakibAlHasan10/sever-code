@@ -1,8 +1,11 @@
 const Products = require("../../models/Products");
 
 const findAllSecure = async (filter) => {
-
-  const product = await Products.find(filter);
+  let query = {};
+  if (filter) {
+    query = filter;
+  }
+  const product = await Products.find(query);
   return product;
 };
 

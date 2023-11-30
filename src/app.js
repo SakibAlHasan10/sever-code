@@ -27,6 +27,8 @@ const changeUserRoleRoute = require("./routes/V1/user/changeUserRoleRoute");
 const insartReviews = require("./routes/V1/reviews/insartReviews");
 const getReviewsRoute = require("./routes/V1/reviews/getReviewsRoute");
 const paymentRoute = require("./routes/V1/paymentRoute/paymentRoute");
+const productUpdateRoute = require("./routes/V1/products/productUpdateRoute");
+// const countProduct = require("./routes/V1/products/countProduct");
 // middleware
 applyMiddleware(app);
 
@@ -39,6 +41,7 @@ app.use(addSocialUserRouter);
 app.use(getSingleUser);
 
 // product
+// app.use(countProduct);
 app.use(insertProductRouter);
 app.use(findAllProductRoute);
 app.use(findAllProdutSecureRoute);
@@ -51,6 +54,7 @@ app.use(changeUserRoleRoute);
 app.use(insartReviews);
 app.use(getReviewsRoute);
 app.use(paymentRoute);
+app.use(productUpdateRoute);
 
 // check server health
 app.get("/health", (req, res) => {
