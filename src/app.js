@@ -71,11 +71,16 @@ app.all("*", (req, res, next) => {
 // error handling middleware
 app.use(globalErrorHandler);
 
-const main = async () => {
-  await connectDB();
-  app.listen(port, () => {
-    console.log(`product hunt Server is running on port ${port}`);
-  });
-};
 
-main();
+
+// const main = async () => {
+//   await connectDB();
+//   app.listen(port, () => {
+//     console.log(`product hunt Server is running on port ${port}`);
+//   });
+// };
+
+// main();
+
+module.exports= app
+

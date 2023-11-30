@@ -12,7 +12,7 @@ const getConnectionString=()=>{
         );
         connectionUrl = connectionUrl.replace(
           "<password>",
-          process.env.DATABASE_PASSWORD
+          process.env.DATABASE_PASSWORD 
         );
       } else {
         connectionUrl = process.env.DATABASE_PRODUCTION;
