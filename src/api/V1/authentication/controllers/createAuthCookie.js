@@ -1,10 +1,9 @@
 const generateToken = require("../../../../utils/generateToken");
 
-const createCookie = (req, res) => {
+const createCookie = (req, res, next) => {
   try {
     const user = req.body;
     const token = generateToken(user);
-    // console.log(token)
     res
       .cookie("token", token, {
         httpOnly: true,
@@ -13,7 +12,7 @@ const createCookie = (req, res) => {
       })
       .send({ success: true });
   } catch (error) {
-    res.send(error);
+    next(error);
   }
 };
 module.exports = createCookie;

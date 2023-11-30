@@ -32,6 +32,10 @@ const UserSchema = new Schema({
     type: Number,
     required: true,
   },
+  downVote: {
+    type: Number,
+    required: true,
+  },
   tags: [Object],
   owner: [
     {

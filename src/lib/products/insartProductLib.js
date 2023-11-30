@@ -11,6 +11,7 @@ const insertProductLib = async (query) => {
     featured: query.featured,
     status: query.status,
     vote: query.vote,
+    downVote: query.vote,
   };
   const cursor = await Products.create(insertDoc);
   return cursor;

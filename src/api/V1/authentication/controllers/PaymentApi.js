@@ -11,7 +11,6 @@ const PaymentApi = async (req, res) => {
     payment_method_types: ["card"],
   });
   res.send({
-    // tk: amount
     clientSecret: paymentIntent.client_secret,
   });
 };
