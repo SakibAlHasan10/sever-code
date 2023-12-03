@@ -5,7 +5,6 @@ const connectDB = require("./src/db/connectDB");
 const server = http.createServer(app)
 const port = process.env.PORT || 5000;
 const main = async () => {
-  console.log("connected..")
   await connectDB();
   server.listen(port, () => {
     console.log(`product hunt Server is running on port ${port}`);

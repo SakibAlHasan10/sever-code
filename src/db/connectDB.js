@@ -1,32 +1,37 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const getConnectionString=()=>{
-    let connectionUrl;
+// const getConnectionString=()=>{
+//     let connectionUrl;
 
-    if (process.env.NODE_ENV === "development") {
-        connectionUrl = process.env.DATABASE_LOCAL;
-        connectionUrl = connectionUrl.replace(
-          "<username>",
-          process.env.DATABASE_USERNAME
-        );
-        connectionUrl = connectionUrl.replace(
-          "<password>",
-          process.env.DATABASE_PASSWORD 
-        );
-      } else {
-        connectionUrl = process.env.DATABASE_PRODUCTION;
-      }
+//     if (process.env.NODE_ENV === "development") {
+//         connectionUrl = process.env.DATABASE_LOCAL;
+//         connectionUrl = connectionUrl.replace(
+//           "<username>",
+//           process.env.DATABASE_USERNAME
+//         );
+//         connectionUrl = connectionUrl.replace(
+//           "<password>",
+//           process.env.DATABASE_PASSWORD 
+//         );
+//       } else {
+//         connectionUrl = process.env.DATABASE_PRODUCTION;
+//       }
     
-      return connectionUrl;
-}
+//       return connectionUrl;
+// }
 
 const connectDB = async () => {
+  try{
+
     console.log("connectting to database");
-    const mongoURI = getConnectionString();
-  
-    await mongoose.connect(mongoURI, { dbName: process.env.DB_NAME });
+    const mongoURI = "mongodb+srv://product_Hunt:b4SMkPX8LB0ngs0p@cluster0.nwipcoy.mongodb.net/productHunt"
+  // console.log(mongoURI)
+    await mongoose.connect(mongoURI);
     console.log("connected to database");
+  }catch(error){
+    console.log("DB connection error",error)
+  }
   };
   
   
